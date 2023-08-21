@@ -80,11 +80,11 @@ function LoginField_comp() {
                         Continue
                     </button>
 
-                    <div>
+                    {/* <div>
                         <p
                             onClick={handleModalOpen}
                             className='hover:underline cursor-pointer'>Don't have an account?</p>
-                    </div>
+                    </div> */}
                     <Modal>
                         <div className="w-[70%] mx-auto flex flex-col items-center">
                             <div className="text-black text-xs font-bold">CLIMBONSIGHT</div>
