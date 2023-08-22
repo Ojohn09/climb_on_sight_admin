@@ -3,9 +3,7 @@ import { selectEvent } from "../../../redux/slices/features/eventSlice";
 import { Link } from "react-router-dom";
 import { IoIosSend } from "react-icons/io";
 import { useState } from "react";
-import { MdDoneOutline, MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
 import { HiChatBubbleBottomCenter } from 'react-icons/hi2'
-import { setActiveTab } from "../../../redux/slices/features/activeTabSlice";
 
 function AllClimbers_comp() {
 
@@ -34,11 +32,6 @@ function AllClimbers_comp() {
     const dispatch = useDispatch();
     const selectedEvent = useSelector((state) => state.event.selectedEvent);
     const [slideAnimation, setSlideAnimation] = useState("slide-in");
-    const activeTab = useSelector((state) => state.activeTab);
-
-    const handleTabClick = (tab) => {
-        dispatch(setActiveTab(tab));
-    };
 
 
     const handleGuideClick = (guide) => {

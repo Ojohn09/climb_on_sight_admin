@@ -23,7 +23,7 @@
   position: absolute;
   left: 80px;
   transition: left 2s;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .menu:hover .menu-icon .menu-text {

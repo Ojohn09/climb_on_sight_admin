@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-import { CalendarDaysIcon, ChatBubbleLeftIcon, HomeIcon, MegaphoneIcon, WalletIcon } from "../../utils/icons"
+import { ChatBubbleLeftIcon, HomeIcon, WalletIcon } from "../../utils/icons"
 import { BiSolidDoorOpen } from "react-icons/bi"
 import { IoCalendar } from 'react-icons/io5'
 import { BiSolidGroup, BiSolidUser } from 'react-icons/bi'
-import groupUser from '../../assets/icons/GroupUser.svg'
+import { BsFillPlusCircleFill } from 'react-icons/bs'
 
 
 function SideNav_HOC() {
@@ -51,7 +51,7 @@ function SideNav_HOC() {
                     </Link>
                     <Link to='/calendar'>
                         <div className=" menu-icon flex items-center gap-2">
-
+                            <BsFillPlusCircleFill />
                             <p className="menu-text text-black font-semibold">Calender</p>
                         </div>
                     </Link>
