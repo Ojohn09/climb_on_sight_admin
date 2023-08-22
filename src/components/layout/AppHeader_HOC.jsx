@@ -29,8 +29,9 @@ function AppHeader_HOC() {
                     <div className='w-full'>
                         <div className="relative flex items-center w-full h-8 rounded-2xl shadow-sm bg-white overflow-hidden">
                             <div className="grid place-items-center h-full w-12 text-gray-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 22 21" fill="none">
+                                    <circle cx="9" cy="9" r="8.5" stroke="black" />
+                                    <circle cx="19.5" cy="18.5" r="2" stroke="black" />
                                 </svg>
                             </div>
 
@@ -47,7 +48,7 @@ function AppHeader_HOC() {
                     <div className="flex items-center justify-end w-full gap-4">
                         <div className='relative'>
                             <div onClick={handleModalToggle} className={`p-2 bg-white rounded-full text-gray-700 cursor-pointer  ${modalOpen ? 'z-30' : 'z-20'}`}>
-                                Settings
+                                <IoSettings />
                             </div>
                             <ModalModal>
                                 <div className='p-5 bg-white absolute top-16 right-[150px] rounded-xl'>
