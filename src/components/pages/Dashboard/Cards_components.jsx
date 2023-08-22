@@ -6,7 +6,7 @@ function Cards_components() {
 
     return (
         <div className="w-full h-auto">
-            <div className="flex flex-col md:flex-row gap-8 lg:gap-4 xl:gap-8 items-center w-full ">
+            <div className="flex flex-col md:flex-row gap-6 lg:gap-4 xl:gap-8 items-center w-full ">
                 {/* <div className="flex flex-col bg-indigo-100 rounded-xl p-4 gap-4 w-full md:w-[25%] shadow-sm">
                     <div className="flex flex-col lg:text-[10px] text-[12px] xl:text-[12px] text-start">
                         <p className="font-semibold">Current Balance</p>
@@ -67,7 +67,7 @@ function Cards_components() {
 
 
 
-                <div className="flex bg-green-50 rounded-xl p-4 xl:p-5 text-center text-[10px] lg:text-[6px] xl:text-[8px] w-full md:w-[25%] shadow-sm">
+                <div className="flex bg-green-50 rounded-xl p-4 text-center text-[10px] lg:text-[6px] xl:text-[10px] w-full md:w-[25%] shadow-sm">
                     <div className=" flex flex-col gap-2 w-full text-center ">
                         <p className="text-lg xl:text-3xl p-1">$324,456</p>
                         <p className="">Guides completed</p>
@@ -78,7 +78,7 @@ function Cards_components() {
                     </div>
                 </div>
 
-                <div className="flex bg-cyan-200 rounded-xl p-4 xl:p-5 text-center text-[10px] lg:text-[6px] xl:text-[8px] w-full md:w-[25%] shadow-sm">
+                <div className="flex bg-cyan-200 rounded-xl p-3 text-center text-[10px] lg:text-[6px] xl:text-[10px] w-full md:w-[25%] shadow-sm">
                     <div className=" flex flex-col gap-2 w-full text-center">
                         <p className="text-lg xl:text-3xl p-1">324</p>
                         <p className="">
@@ -93,7 +93,7 @@ function Cards_components() {
                 </div>
 
 
-                <div className="flex bg-cyan-200 rounded-xl p-4 xl:p-5 text-center text-[10px] lg:text-[6px] xl:text-[8px] w-full md:w-[25%] shadow-sm">
+                <div className="flex bg-cyan-200 rounded-xl p-3 text-center text-[10px] lg:text-[6px] xl:text-[10px] w-full md:w-[25%] shadow-sm">
                     <div className=" flex flex-col gap-2 w-full text-center">
                         <p className="text-lg xl:text-3xl p-1">324</p>
                         <p className="">
@@ -108,7 +108,7 @@ function Cards_components() {
                 </div>
 
 
-                <div className="flex bg-rose-100 rounded-xl p-4 xl:p-5 text-center text-[10px] lg:text-[6px] xl:text-[8px] w-full md:w-[25%] shadow-sm">
+                <div className="flex bg-rose-100 rounded-xl p-3 text-center text-[10px] lg:text-[6px] xl:text-[10px] w-full md:w-[25%] shadow-sm">
                     <div className=" flex flex-col gap-2 w-full text-center">
                         <p className="text-lg xl:text-3xl p-1">4534</p>
                         <p className="">Climbers registered</p>

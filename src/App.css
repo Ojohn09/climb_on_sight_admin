@@ -7,13 +7,6 @@
   opacity: 1;
 }
 
-/* .step-item {
-  @apply relative flex flex-col items-center justify-center text-center text-[14px] w-32
-}
-
-.step-item::before {
-  @apply content-[''] bg-black h-[3px] w-[100%] absolute right-2/4 top-1/3 -translate-y-2/4;
-} */
 
 .menu {
   overflow: hidden;
@@ -101,4 +94,14 @@ select::-ms-expand {
 .paytable {
   height: 230px;
   overflow-y: scroll;
+}
+
+.slide-in {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-out {
+  transform: translateY(100%);
+  opacity: 0;
 }

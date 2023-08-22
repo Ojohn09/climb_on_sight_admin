@@ -8,6 +8,8 @@ import { useSelector } from 'react-redux'
 import Event_page from './pages/events/Event_page'
 import Calender_page from './pages/calendar/Calender_page'
 import Payout_page from './pages/payout/Payout_page'
+import Guides_page from './pages/guides/Guides_page'
+import Climbers_page from './pages/climbers/Climbers_page'
 
 function App() {
 
@@ -27,6 +29,8 @@ function App() {
           {/* <Route path='/success-page' element={<SuccessPage_comp />} /> */}
           <Route path='/calendar' element={<Calender_page />} />
           <Route path='/payout' element={<Payout_page />} />
+          <Route path='/guides' element={<Guides_page />} />
+          <Route path='/climbers' element={<Climbers_page />} />
 
         </Routes>
       </BrowserRouter>
