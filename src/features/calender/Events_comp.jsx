@@ -13,28 +13,28 @@ function Events_comp() {
 
 
     return (
-        <div>
+        <div className="h-full">
             <div>
-                <p className='text-sm font-semibold'>
+                <p className='text-sm font-semibold xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl xl:mt-2'>
                     Top events across the country
                 </p>
             </div>
-            <div className='grid grid-cols-3 gap-2'>
+            <div className='grid grid-cols-3 gap-2 3xl:gap-6'>
                 {
                     eventData.map((data) => (
                         <div
                             key={data.id}
                             //   onClick={() => handleEventClick(data)}
-                            className={`bg-white rounded-lg p-2 w-fit cursor-pointer text-[10px]`}>
+                            className={`bg-white rounded-xl p-2 w-full h-full cursor-pointer text-[10px] 3xl:text-base 4xl:text-lg`}>
                             <div>
-                                <img src={data.image} alt="" className='w-full rounded-lg h-[50%]' />
+                                <img src={data.image} alt="" className='w-full rounded-xl h-[50%]' />
 
                             </div>
                             <div className="flex justify-between w-auto mt-2 font-semibold">
                                 <p>Climb off</p>
                                 <p>{data.amount}</p>
                             </div>
-                            <div className='flex text-[6px] xl:text-[7px] gap-2'>
+                            <div className='flex text-[5px] xl:text-[8px] 2xl:text-[10px] 3xl:text-xs 4xl:text-sm gap-3'>
                                 <div>
                                     <p className='text-gray-400'>Date</p>
                                     <p>{data.date}</p>

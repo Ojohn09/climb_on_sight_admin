@@ -3,7 +3,7 @@ import { loginUser } from "../../features/auth/authActions";
 import { useDispatch, useSelector } from "react-redux"
 import { validationSchema } from "../../schema/loginValidationSchema"
 import { Link, useNavigate } from 'react-router-dom';
-import { openModal } from "../../redux/slices/features/modalSlice";
+import { openModal } from "../../redux/slices/features/modal/modalSlice";
 import Modal from "../../components/modal/modal";
 
 
@@ -40,7 +40,7 @@ function LoginField_comp() {
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
                 className=''>
-                <Form className='flex flex-col items-center gap-4 max-w-[320px] mx-auto'>
+                <Form className='flex flex-col items-center gap-4 w-[50%] mx-auto'>
                     <div className='font-bold lg:mt-10 xl:mt-16 xl:mb-8 xl:text-base text-[12px] font-face-mr'>
                         CLIMBONSIGHT
                     </div>

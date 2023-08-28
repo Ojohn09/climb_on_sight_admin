@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiPlus } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 function TodayEvent_comp() {
     const today = new Date();
@@ -12,150 +13,150 @@ function TodayEvent_comp() {
     // ]
 
     return (
-        <div className='bg-white h-fit xl:h-full rounded-xl p-4 flex flex-col gap-3'>
+        <div className='bg-white h-full   rounded-xl p-4 xl:p-8 flex flex-col gap-3'>
             <div className='flex items-center justify-between'>
-                <div className='text-xs'>
-                    <p className='font-semibold'>Todays</p>
+                <div className='text-xs 2xl:text-lg 3xl:text-2xl'>
+                    <p className='font-semibold'>Todays events</p>
                     <p>{formattedDate}</p>
                 </div>
 
-                <div className='text-lg p-1 bg-black text-white rounded-full'>
-                    <p><BiPlus /> </p>
+                <div className='text-lg 3xl:text-2xl p-1 bg-black text-white rounded-full cursor-pointer'>
+                    <Link to='/calendar'><BiPlus /> </Link>
                 </div>
             </div>
 
-            <div className='w-[60%] xl:w-[50%] lg:text-[13px] xl:text-lg font-bold'>
+            <div className='w-[60%] xl:w-[50%] 2xl:w-[70%] lg:text-[11px] xl:mt-0 xl:text-sm 3xl:text-3xl 3xl:mt-4 font-bold'>
                 <p>
-                    Top locations
+                    All booked trips coming up this week
                 </p>
             </div>
 
-            <div className=''>
-                <div className='flex items-center justify-between'>
-                    <div className="w-28 h-9 sm:h-11 relative mt-1">
-                        <img className=" sm:w-8 sm:h-8 w-6 h-6 left-0 sm:left-0 top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
-                        <img className=" sm:w-8 sm:h-8 w-6 h-6 left-[10px] sm:left-[20px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
-                        <img className=" sm:w-8 sm:h-8 w-6 h-6 left-[20px] sm:left-[40px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
-                        <img className=" sm:w-8 sm:h-8 w-6 h-6 left-[30px] sm:left-[60px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
-                        <img className=" sm:w-8 sm:h-8 w-6 h-6 left-[40px] sm:left-[80px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
-                    </div>
 
-                    <div className='text-[8px] sm:text-[10px] xl:text-xs border-l pl-2'>
-                        <p className='font-bold'>View all locations</p>
-                        <p className='text-gray-700
+            <div className='flex items-center justify-between'>
+                <div className="w-full h-9 sm:h-11 3xl:h-20 relative xl:mt-2">
+                    <img className=" sm:w-8 sm:h-8 w-6 h-6 2xl:w-10 2xl:h-10 3xl:w-14 3xl:h-14 left-0 sm:left-0 top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
+                    <img className=" sm:w-8 sm:h-8 w-6 h-6 2xl:w-10 2xl:h-10 3xl:w-14 3xl:h-14 left-[10px] sm:left-[20px] 3xl:text-[40px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
+                    <img className=" sm:w-8 sm:h-8 w-6 h-6 2xl:w-10 2xl:h-10 3xl:w-14 3xl:h-14 left-[20px] sm:left-[40px] 3xl:text-[80px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
+                    <img className=" sm:w-8 sm:h-8 w-6 h-6 2xl:w-10 2xl:h-10 3xl:w-14 3xl:h-14 left-[30px] sm:left-[60px] 3xl:text-[120px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
+                    <img className=" sm:w-8 sm:h-8 w-6 h-6 2xl:w-10 2xl:h-10 3xl:w-14 3xl:h-14 left-[40px] sm:left-[80px] 3xl:text-[160px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
+                </div>
+
+                <div className='text-[8px] sm:text-[10px] xl:text-xs 3xl:text-lg border-l pl-2'>
+                    <p className='font-bold'>All climbers registered</p>
+                    <p className='text-gray-700
                         '>432</p>
+                </div>
+            </div>
+
+
+            <div className='flex flex-col gap-1 2xl:gap-4 2xl:mt-4'>
+                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[12px] xl:text-[12px] 3xl:text-base 4xl:text-xl items-center'>
+                    <div className='flex gap-2 items-center'>
+
+                        <img src="https://picsum.photos/200/300" alt="" className='w-8 h-8 sm:w-14 sm:h-14 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 4xl:w-20 4xl:h-20 rounded-full ' />
+
+                        <div className='flex flex-col xl:gap-2'>
+                            <p className=''>Sarah martins</p>
+                            <p className='text-gray-400'>Ice climbing</p>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col text-end'>
+                        <p className=''>June 20th</p>
+                        <p>02:00pm</p>
+                    </div>
+                </div>
+
+                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[12px] xl:text-[12px] 3xl:text-base 4xl:text-xl items-center'>
+                    <div className='flex gap-2 items-center'>
+
+                        <img src="https://picsum.photos/200/300" alt="" className='w-8 h-8 sm:w-14 sm:h-14 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 4xl:w-20 4xl:h-20 rounded-full ' />
+
+                        <div className='flex flex-col xl:gap-2'>
+                            <p className=''>Sarah martins</p>
+                            <p className='text-gray-400'>Ice climbing</p>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col text-end'>
+                        <p className=''>June 20th</p>
+                        <p>02:00pm</p>
+                    </div>
+                </div>
+
+                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[12px] xl:text-[12px] 3xl:text-base 4xl:text-xl items-center'>
+                    <div className='flex gap-2 items-center'>
+
+                        <img src="https://picsum.photos/200/300" alt="" className='w-8 h-8 sm:w-14 sm:h-14 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 4xl:w-20 4xl:h-20 rounded-full ' />
+
+                        <div className='flex flex-col xl:gap-2'>
+                            <p className=''>Sarah martins</p>
+                            <p className='text-gray-400'>Ice climbing</p>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col text-end'>
+                        <p className=''>June 20th</p>
+                        <p>02:00pm</p>
+                    </div>
+                </div>
+
+                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[12px] xl:text-[12px] 3xl:text-base 4xl:text-xl items-center'>
+                    <div className='flex gap-2 items-center'>
+
+                        <img src="https://picsum.photos/200/300" alt="" className='w-8 h-8 sm:w-14 sm:h-14 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 4xl:w-20 4xl:h-20 rounded-full ' />
+
+                        <div className='flex flex-col xl:gap-2'>
+                            <p className=''>Sarah martins</p>
+                            <p className='text-gray-400'>Ice climbing</p>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col text-end'>
+                        <p className=''>June 20th</p>
+                        <p>02:00pm</p>
+                    </div>
+                </div>
+
+                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[12px] xl:text-[12px] 3xl:text-base 4xl:text-xl items-center'>
+                    <div className='flex gap-2 items-center'>
+
+                        <img src="https://picsum.photos/200/300" alt="" className='w-8 h-8 sm:w-14 sm:h-14 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 4xl:w-20 4xl:h-20 rounded-full ' />
+
+                        <div className='flex flex-col xl:gap-2'>
+                            <p className=''>Sarah martins</p>
+                            <p className='text-gray-400'>Ice climbing</p>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col text-end'>
+                        <p className=''>June 20th</p>
+                        <p>02:00pm</p>
+                    </div>
+                </div>
+
+                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[12px] xl:text-[12px] 3xl:text-base 4xl:text-xl items-center'>
+                    <div className='flex gap-2 items-center'>
+
+                        <img src="https://picsum.photos/200/300" alt="" className='w-8 h-8 sm:w-14 sm:h-14 lg:w-8 lg:h-8 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 4xl:w-20 4xl:h-20 rounded-full ' />
+
+                        <div className='flex flex-col xl:gap-2'>
+                            <p className=''>Sarah martins</p>
+                            <p className='text-gray-400'>Ice climbing</p>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col text-end'>
+                        <p className=''>June 20th</p>
+                        <p>02:00pm</p>
                     </div>
                 </div>
             </div>
 
-            <div className='flex flex-col gap-1'>
-                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[10px] xl:text-[12px] items-center'>
-                    <div className='flex gap-2 items-center'>
-                        <div className='w-8 h-8 sm:w-14 sm:h-14 lg:w-10 lg:h-10 xl:h-12 xl:w-12 bg-gray-300 rounded-full '>
-
-                        </div>
-                        <div className='flex flex-col'>
-                            <p className='font-bold'>The wild</p>
-                            <p>Ice climbing</p>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col text-end'>
-                        <p className='font-bold'>243 Bookings</p>
-                        <p>South park</p>
-                    </div>
-                </div>
-
-                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[10px] xl:text-[12px] items-center'>
-                    <div className='flex gap-2 items-center'>
-                        <div className='w-8 h-8 sm:w-14 sm:h-14 lg:w-10 lg:h-10 xl:h-12 xl:w-12 bg-gray-300 rounded-full '>
-
-                        </div>
-                        <div className='flex flex-col'>
-                            <p className='font-bold'>The wild</p>
-                            <p>Ice climbing</p>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col text-end'>
-                        <p className='font-bold'>243 Bookings</p>
-                        <p>South park</p>
-                    </div>
-                </div>
-
-                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[10px] xl:text-[12px] items-center'>
-                    <div className='flex gap-2 items-center'>
-                        <div className='w-8 h-8 sm:w-14 sm:h-14 lg:w-10 lg:h-10 xl:h-12 xl:w-12 bg-gray-300 rounded-full '>
-
-                        </div>
-                        <div className='flex flex-col'>
-                            <p className='font-bold'>The wild</p>
-                            <p>Ice climbing</p>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col text-end'>
-                        <p className='font-bold'>243 Bookings</p>
-                        <p>South park</p>
-                    </div>
-                </div>
-
-                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[10px] xl:text-[12px] items-center'>
-                    <div className='flex gap-2 items-center'>
-                        <div className='w-8 h-8 sm:w-14 sm:h-14 lg:w-10 lg:h-10 xl:h-12 xl:w-12 bg-gray-300 rounded-full '>
-
-                        </div>
-                        <div className='flex flex-col'>
-                            <p className='font-bold'>The wild</p>
-                            <p>Ice climbing</p>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col text-end'>
-                        <p className='font-bold'>243 Bookings</p>
-                        <p>South park</p>
-                    </div>
-                </div>
-
-                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[10px] xl:text-[12px] items-center'>
-                    <div className='flex gap-2 items-center'>
-                        <div className='w-8 h-8 sm:w-14 sm:h-14 lg:w-10 lg:h-10 xl:h-12 xl:w-12 bg-gray-300 rounded-full '>
-
-                        </div>
-                        <div className='flex flex-col'>
-                            <p className='font-bold'>The wild</p>
-                            <p>Ice climbing</p>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col text-end'>
-                        <p className='font-bold'>243 Bookings</p>
-                        <p>South park</p>
-                    </div>
-                </div>
-
-                <div className=' flex justify-between text-[8px] sm:text-[12px] lg:text-[10px] xl:text-[12px] items-center'>
-                    <div className='flex gap-2 items-center'>
-                        <div className='w-8 h-8 sm:w-14 sm:h-14 lg:w-10 lg:h-10 xl:h-12 xl:w-12 bg-gray-300 rounded-full '>
-
-                        </div>
-                        <div className='flex flex-col'>
-                            <p className='font-bold'>The wild</p>
-                            <p>Ice climbing</p>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col text-end'>
-                        <p className='font-bold'>243 Bookings</p>
-                        <p>South park</p>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <button className='bg-black w-full text-white p-3 rounded-3xl'>
+            <div className='flex justify-center items-center w-full mt-2'>
+                <Link to='/events' className='bg-black w-full text-center text-white p-3 3xl:p-5 rounded-3xl 3xl:text-2xl '>
                     Show all
-                </button>
+                </Link>
             </div>
         </div>
     )
