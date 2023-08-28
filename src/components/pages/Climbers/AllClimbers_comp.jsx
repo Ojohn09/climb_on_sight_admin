@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectEvent } from "../../../redux/slices/features/eventSlice";
+import { selectEvent1 } from "../../../redux/slices/features/eventSlice";
 import { Link } from "react-router-dom";
 import { IoIosSend } from "react-icons/io";
 import { useState } from "react";
@@ -30,16 +30,17 @@ function AllClimbers_comp() {
     ]
 
     const dispatch = useDispatch();
-    const selectedEvent = useSelector((state) => state.event.selectedEvent);
+    const climbersEvent = useSelector((state) => state.event.climbersEvent);
     const [slideAnimation, setSlideAnimation] = useState("slide-in");
 
 
-    const handleGuideClick = (guide) => {
+    const handleGuideClick = (event) => {
         setSlideAnimation("slide-out");
+        console.log('Clicked on:', event);
 
         // Delay to allow the slide-out animation to complete
         setTimeout(() => {
-            dispatch(selectEvent(guide));
+            dispatch(selectEvent1(event));
             setSlideAnimation("slide-in"); // Slide in animation for new event
         }, 700);
     };
@@ -70,7 +71,7 @@ function AllClimbers_comp() {
                             <div
                                 onClick={() => handleGuideClick(data)}
                                 key={data.id}
-                                style={{ backgroundImage: `url(${data.image})` }} className="w-[100%] xl:h-36 relative h-28 rounded-xl bg-cover bg-center">
+                                style={{ backgroundImage: `url(${data.image})` }} className="w-[100%] xl:h-36 relative h-28 rounded-xl bg-cover bg-center cursor-pointer">
                                 <div className="flex justify-between items-center absolute bottom-0 bg-gray-300 bg-opacity-60 backdrop-blur w-full rounded-xl p-2">
                                     <div>
                                         <p className="text-[9px]">{data.name}</p>
@@ -96,17 +97,17 @@ function AllClimbers_comp() {
 
                     <div className="mt-12 overflow-hidden">
                         <div className={`p-3 ${slideAnimation} transition-all duration-700 overflow-hidden`}>
-                            {selectedEvent && (
+                            {climbersEvent && (
                                 <>
                                     <div className="bg-white rounded-xl p-2 xl:p-2.5 shadow-lg">
                                         <div className="w-full text-center text-xs font-semibold mb-1">
                                             <p>Event details</p>
                                         </div>
                                         <div>
-                                            <img src={selectedEvent.image} alt="" className={`w-full h-28 object-cover rounded-xl transition duration-700`} />
+                                            <img src={climbersEvent.image} alt="" className={`w-full h-28 object-cover rounded-xl transition duration-700`} />
                                         </div>
                                         <div className="flex justify-between mt-4">
-                                            <p className="font-semibold text-[12px]">{selectedEvent.name}</p>
+                                            <p className="font-semibold text-[12px]">{climbersEvent.name}</p>
                                             <div className=" rounded-xl bg-gray-200 text-[10px] xl:text-xs flex items-center px-1">
                                                 <p className="capitalize">234 completed events</p>
                                             </div>
@@ -118,7 +119,7 @@ function AllClimbers_comp() {
                                                 <p >Mountain climbing</p>
                                             </div>
                                             <div className="">
-                                                <p className="bg-black text-white rounded-xl text-center p-0.5 px-2">See All Events</p>
+                                                <Link to='/climb-event' className="bg-black text-white rounded-xl text-center p-0.5 px-2">See All Events</Link>
                                             </div>
                                         </div>
 

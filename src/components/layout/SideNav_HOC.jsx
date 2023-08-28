@@ -1,64 +1,84 @@
 import { Link } from "react-router-dom"
-import { ChatBubbleLeftIcon, HomeIcon, WalletIcon } from "../../utils/icons"
+import { CalendarDaysIcon, ChatBubbleLeftIcon, HomeIcon, MegaphoneIcon, WalletIcon } from "../../utils/icons"
 import { BiSolidDoorOpen } from "react-icons/bi"
-import { IoCalendar } from 'react-icons/io5'
-import { BiSolidGroup, BiSolidUser } from 'react-icons/bi'
-import { BsFillPlusCircleFill } from 'react-icons/bs'
+import { AiFillPlusCircle } from 'react-icons/ai'
 
 
 function SideNav_HOC() {
     return (
-        <div className="xl:mt-4">
-            <div className="bg-[#F4E8DF] fixed border border-r lg:min-h-[80%] xl:max-h-screen menu flex flex-col justify-between gap-[150px] z-50 p-3 w-[50px]">
+        <div className=" p-3">
+            <div className="bg-[#F4E8DF] h-[90%] fixed border border-r menu flex flex-col items-start justify-around gap-[150px] z-50 p-3 w-[50px]">
                 <div>
-                    <Link to="/dashboard" className="text-[8px] font-face-mr ">CBO</Link>
+                    <Link to="/dashboard" className="text-[12px] font-face-mr ">CO</Link>
                 </div>
 
 
-                <div className="flex flex-col gap-6 text-gray-400">
+                <div className="flex flex-col gap-3 2xl:text-xl text-gray-400">
                     <Link to='/dashboard'>
                         <div className="menu-icon flex items-center gap-2">
                             <HomeIcon />
                             <p className="menu-text text-black font-semibold">Home</p>
                         </div>
                     </Link>
-
                     <Link to='/guides'>
-                        <div className="menu-icon flex items-center gap-2 text-gray-400">
-                            <BiSolidGroup />
+                        <div className="menu-icon flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8" viewBox="0 0 23 20" fill="none">
+                                <path d="M7.26771 9.51724C4.59181 9.51724 2.42257 7.38673 2.42257 4.75862C2.42257 2.13051 4.59181 0 7.26771 0C9.94361 0 12.1129 2.13051 12.1129 4.75862C12.1129 7.38673 9.94361 9.51724 7.26771 9.51724Z" fill="currentColor" />
+                                <path d="M7.26771 19.0345C1.28275 19.0345 0 18.3346 0 15.069C0 11.8034 1.28275 11.1034 7.26771 11.1034C13.2527 11.1034 14.5354 11.8034 14.5354 15.069C14.5354 18.3346 13.2527 19.0345 7.26771 19.0345Z" fill="currentColor" />
+                                <path d="M17.7655 5.55172C17.7655 3.57992 16.1635 1.58621 13.7279 1.58621C13.2819 1.58621 12.9204 1.94129 12.9204 2.37931C12.9204 2.81733 13.2819 3.17241 13.7279 3.17241C15.1684 3.17241 16.1505 4.35111 16.1505 5.55172C16.1505 6.75234 15.1684 7.93103 13.7279 7.93103C13.2819 7.93103 12.9204 8.28612 12.9204 8.72414C12.9204 9.16216 13.2819 9.51724 13.7279 9.51724C16.1635 9.51724 17.7655 7.52352 17.7655 5.55172Z" fill="currentColor" />
+                                <path d="M15.3429 10.3103C14.897 10.3103 14.5354 10.6654 14.5354 11.1034C14.5354 11.5415 14.897 11.8966 15.3429 11.8966C17.5961 11.8966 18.9406 12.0064 19.7233 12.3301C20.0774 12.4765 20.2652 12.648 20.3801 12.8414C20.5035 13.0491 20.5919 13.3653 20.5919 13.8793C20.5919 14.3904 20.5046 14.7263 20.3854 14.9528C20.2725 15.1674 20.1076 15.3292 19.8585 15.4597C19.3011 15.7517 18.384 15.8621 16.958 15.8621C16.512 15.8621 16.1505 16.2172 16.1505 16.6552C16.1505 17.0932 16.512 17.4483 16.958 17.4483C18.3584 17.4483 19.6619 17.3604 20.6186 16.8593C21.1266 16.5932 21.542 16.2098 21.8203 15.6809C22.0923 15.1638 22.2069 14.5579 22.2069 13.8793C22.2069 13.2037 22.0934 12.578 21.7751 12.0422C21.4484 11.4921 20.9549 11.1183 20.35 10.8682C19.2149 10.3988 17.5311 10.3103 15.3429 10.3103Z" fill="currentColor" />
+                            </svg>
                             <p className="menu-text flex justify-between gap-1">
                                 <span className="text-black font-semibold">All</span>
                                 <span className="text-black font-semibold">Guides</span>
                             </p>
                         </div>
                     </Link>
-
                     <Link to='/climbers'>
-                        <div className="menu-icon flex items-center gap-2 text-gray-400">
-                            <BiSolidUser />
+                        <div className=" menu-icon flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8" viewBox="0 0 18 20" fill="none">
+                                <g opacity="">
+                                    <path d="M0 15.069C0 18.3346 1.53981 19.0345 8.72414 19.0345C15.9085 19.0345 17.4483 18.3346 17.4483 15.069C17.4483 11.8034 15.9085 11.1034 8.72414 11.1034C1.53981 11.1034 0 11.8034 0 15.069Z" fill="currentColor" />
+                                    <path d="M3.96552 4.75862C3.96552 7.38673 6.09602 9.51724 8.72414 9.51724C11.3523 9.51724 13.4828 7.38673 13.4828 4.75862C13.4828 2.13051 11.3523 0 8.72414 0C6.09602 0 3.96552 2.13051 3.96552 4.75862Z" fill="currentColor" />
+                                </g>
+                            </svg>
                             <p className="menu-text flex justify-between gap-1">
                                 <span className="text-black font-semibold">All</span>
                                 <span className="text-black font-semibold">Climbers</span>
                             </p>
                         </div>
                     </Link>
-
+                    <Link to='/stats'>
+                        <div className="menu-icon flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8" viewBox="0 0 23 23" fill="none">
+                                <g opacity="">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M11.5 23C2.02975 23 0 20.9702 0 11.5C0 2.02975 2.02975 0 11.5 0C20.9702 0 23 2.02975 23 11.5C23 20.9702 20.9702 23 11.5 23ZM6.64075 13.7702C6.4457 14.2617 5.88929 14.5024 5.39746 14.3078C4.9053 14.1131 4.66416 13.5563 4.85887 13.0641L5.75 13.4167C6.64113 13.7692 6.64075 13.7702 6.64075 13.7702ZM5.75 13.4167L6.64113 13.7692L6.64511 13.7594C6.64891 13.7501 6.65517 13.7349 6.6638 13.7144C6.68109 13.6733 6.70783 13.6111 6.74348 13.5322C6.81496 13.3739 6.92116 13.1506 7.05756 12.8963C7.33667 12.376 7.7155 11.7765 8.15035 11.3302C8.60321 10.8655 8.96617 10.7168 9.23262 10.7343C9.47541 10.7502 9.99147 10.9311 10.6951 12.0201C11.5395 13.327 12.5162 14.1044 13.6419 14.1783C14.7438 14.2506 15.6248 13.6207 16.2224 13.0073C16.8381 12.3755 17.3162 11.5974 17.6315 11.0096C17.7923 10.7099 17.9176 10.4465 18.0033 10.2567C18.0463 10.1615 18.0796 10.0842 18.1027 10.0294C18.1142 10.0019 18.1233 9.98002 18.1297 9.96426L18.1374 9.94528L18.1398 9.93935L18.1406 9.9373C18.1406 9.9373 18.1411 9.93587 17.25 9.58333L18.1411 9.93587C18.3358 9.44371 18.0947 8.8869 17.6025 8.6922C17.1107 8.49762 16.5542 8.73834 16.3592 9.2299L16.3589 9.2308L16.3549 9.2406C16.3526 9.24619 16.3495 9.25388 16.3454 9.26355C16.3427 9.27004 16.3397 9.27741 16.3362 9.28564C16.3189 9.3267 16.2922 9.38886 16.2565 9.46779C16.185 9.62607 16.0788 9.84937 15.9424 10.1037C15.6633 10.624 15.2845 11.2235 14.8497 11.6698C14.3968 12.1345 14.0339 12.2832 13.7674 12.2657C13.5246 12.2498 13.0086 12.0689 12.3049 10.9799C11.4605 9.67304 10.4838 8.89562 9.35819 8.82172C8.25625 8.74937 7.37521 9.37932 6.77758 9.99267C6.16194 10.6245 5.68379 11.4026 5.36854 11.9904C5.20775 12.2901 5.08243 12.5535 4.99669 12.7433C4.95372 12.8385 4.92042 12.9158 4.89732 12.9706C4.88576 12.9981 4.87674 13.02 4.87031 13.0357L4.86262 13.0547L4.86025 13.0606L4.85944 13.0627C4.85944 13.0627 4.85887 13.0641 5.75 13.4167Z" fill="currentColor" />
+                                </g>
+                            </svg>
+                            <p className="menu-text text-black font-semibold">Payout</p> </div>
+                    </Link>
                     <Link to='/events'>
                         <div className="menu-icon flex items-center gap-2">
-                            <IoCalendar />
-                            <p className="menu-text text-black font-semibold">Events</p>
-                        </div>
-                    </Link>
-                    <Link to='/calendar'>
-                        <div className=" menu-icon flex items-center gap-2">
-                            <BsFillPlusCircleFill />
-                            <p className="menu-text text-black font-semibold">Calender</p>
-                        </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8" viewBox="0 0 23 25" fill="none">
+                                <g opacity="">
+                                    <path d="M14.375 0.958333C14.375 0.429061 14.8041 0 15.3333 0C15.8626 0 16.2917 0.42906 16.2917 0.958333V4.79167C16.2917 5.32094 15.8626 5.75 15.3333 5.75C14.8041 5.75 14.375 5.32094 14.375 4.79167V0.958333Z" fill="currentColor" />
+                                    <path d="M13.4167 1.94968C12.8144 1.92701 12.1762 1.91667 11.5 1.91667C10.8238 1.91667 10.1856 1.92701 9.58333 1.94968V4.79167C9.58333 5.85021 8.72521 6.70833 7.66667 6.70833C6.60812 6.70833 5.75 5.85021 5.75 4.79167V2.3725C2.38846 3.10761 0.869633 4.86069 0.295225 8.53006C0.207439 9.09084 0.653987 9.58333 1.2216 9.58333H21.7784C22.346 9.58333 22.7926 9.09084 22.7048 8.53006C22.1304 4.86069 20.6115 3.10761 17.25 2.3725V4.79167C17.25 5.85021 16.3919 6.70833 15.3333 6.70833C14.2748 6.70833 13.4167 5.85021 13.4167 4.79167V1.94968Z" fill="currentColor" />
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M11.5 24.9167C2.02975 24.9167 0 22.8869 0 13.4167C0 13.0757 0.0026304 12.7445 0.00814361 12.4226C0.0169674 11.9074 0.44071 11.5 0.95596 11.5H22.044C22.5593 11.5 22.983 11.9074 22.9919 12.4226C22.9974 12.7445 23 13.0757 23 13.4167C23 22.8869 20.9702 24.9167 11.5 24.9167ZM4.79167 15.3333C4.79167 14.8041 5.22073 14.375 5.75 14.375H8.625C9.15427 14.375 9.58333 14.8041 9.58333 15.3333C9.58333 15.8626 9.15427 16.2917 8.625 16.2917H5.75C5.22073 16.2917 4.79167 15.8626 4.79167 15.3333ZM5.75 18.2083C5.22073 18.2083 4.79167 18.6374 4.79167 19.1667C4.79167 19.6959 5.22073 20.125 5.75 20.125H8.625C9.15427 20.125 9.58333 19.6959 9.58333 19.1667C9.58333 18.6374 9.15427 18.2083 8.625 18.2083H5.75ZM13.4167 15.3333C13.4167 14.8041 13.8457 14.375 14.375 14.375H17.25C17.7793 14.375 18.2083 14.8041 18.2083 15.3333C18.2083 15.8626 17.7793 16.2917 17.25 16.2917H14.375C13.8457 16.2917 13.4167 15.8626 13.4167 15.3333ZM14.375 18.2083C13.8457 18.2083 13.4167 18.6374 13.4167 19.1667C13.4167 19.6959 13.8457 20.125 14.375 20.125H17.25C17.7793 20.125 18.2083 19.6959 18.2083 19.1667C18.2083 18.6374 17.7793 18.2083 17.25 18.2083H14.375Z" fill="currentColor" />
+                                    <path d="M6.70833 0.958333C6.70833 0.429061 7.13739 0 7.66667 0C8.19594 0 8.625 0.42906 8.625 0.958333V4.79167C8.625 5.32094 8.19594 5.75 7.66667 5.75C7.13739 5.75 6.70833 5.32094 6.70833 4.79167V0.958333Z" fill="currentColor" />
+                                </g>
+                            </svg>
+                            <p className="menu-text text-black font-semibold">Events</p> </div>
                     </Link>
                     <Link to='/payout'>
                         <div className="menu-icon flex items-center gap-2">
-                            <WalletIcon />
-                            <p className="menu-text text-black font-semibold">Payout</p> </div>
+                            <p className="text-lg 2xl:text-2xl 3xl:text-3xl">
+                                <AiFillPlusCircle />
+                            </p>
+                            <p className="menu-text flex justify-between gap-1">
+                                <span className="text-black font-semibold">Add</span>
+                                <span className="text-black font-semibold">Admin</span>
+                            </p>
+                        </div>
                     </Link>
                     <Link to=''>
                         <div className="menu-icon flex items-center gap-2">

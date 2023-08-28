@@ -3,9 +3,9 @@ import { selectEvent } from "../../../redux/slices/features/eventSlice";
 import { Link } from "react-router-dom";
 import { IoIosSend } from "react-icons/io";
 import { useState } from "react";
-import { setActiveTab } from "../../../redux/slices/features/activeTabSlice";
 
-function UpcomingEvent_comp() {
+
+function GuideEvent_comp() {
     const eventData = [
         { id: 0, image: 'https://source.unsplash.com/random/300x200?sig=1', name: 'Climb off', amount: '$243', date: 'September 3', time: '02:00 PM', location: '23 victoria avenue' },
         { id: 1, image: 'https://source.unsplash.com/random/300x200?sig=2', name: 'hike', amount: '$243', date: 'September 3', time: '02:00 PM', location: '23 victoria avenue' },
@@ -42,7 +42,7 @@ function UpcomingEvent_comp() {
     const selectedEvent = useSelector((state) => state.event.selectedEvent);
 
     const [slideAnimation, setSlideAnimation] = useState("slide-in");
-    const activeTab = useSelector((state) => state.activeTab);
+
 
     const handleEventClick = (event) => {
         dispatch(selectEvent(event));
@@ -58,12 +58,6 @@ function UpcomingEvent_comp() {
     };
 
 
-
-    const handleTabClick = (tab) => {
-        dispatch(setActiveTab(tab));
-    };
-
-
     return (
 
 
@@ -72,26 +66,7 @@ function UpcomingEvent_comp() {
             <div className='w-full flex  overflow-y-hidden'>
                 <div className='lg:w-[60%] xl:w-[70%] h-[86vh] scrollbar-hide overflow-y-auto'>
                     <div className='h-[50px] p-2 fixed flex items-center justify-between lg:w-[53%] xl:w-[64%] z-10 bg-[#FBF7F4] border-b border-r'>
-                        <div className="flex gap-4 items-center">
-                            <p className='font-semibold'>Events</p>
-
-                            <ul className="flex text-[9px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-base bg-gray-200 p-0.5 xl:p-1 w-fit gap-0.5 rounded-2xl">
-                                <li
-                                    onClick={() => handleTabClick('tab1')}
-                                    className={`p-1 cursor-pointer ${activeTab === 'tab1' ? 'bg-black rounded-xl text-[#32D49D]' : ''
-                                        }`}
-                                >
-                                    Upcoming events
-                                </li>
-                                <li
-                                    onClick={() => handleTabClick('tab2')}
-                                    className={`p-1 cursor-pointer ${activeTab === 'tab2' ? 'bg-black rounded-xl text-[#32D49D]' : ''
-                                        }`}
-                                >
-                                    Past
-                                </li>
-                            </ul>
-                        </div>
+                        <p className='font-semibold'>Guide Event</p>
                         <div className="relative flex items-center px-1 w-[30%] h-8 rounded-2xl shadow-sm bg-white overflow-hidden">
                             <div className="grid place-items-center h-full w-8 text-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 22 21" fill="none">
@@ -107,77 +82,40 @@ function UpcomingEvent_comp() {
                                 placeholder="Search events" />
                         </div>
                     </div>
-                    {activeTab === 'tab1' ?
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 p-3'>
-                            {
-                                eventData.map((data) => (
-                                    <div
-                                        key={data.id}
-                                        onClick={() => handleEventClick(data)}
-                                        className={`bg-white w-full rounded-xl shadow-xl p-2 cursor-pointer`}>
-                                        <div>
-                                            <img src={data.image} alt="" className='w-full rounded-xl' />
+                    <div className='grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 w-full mt-12 p-3'>
+                        {
+                            eventData.map((data) => (
+                                <div
+                                    key={data.id}
+                                    onClick={() => handleEventClick(data)}
+                                    className={`bg-white w-full rounded-xl shadow-xl p-2 cursor-pointer`}>
+                                    <div>
+                                        <img src={data.image} alt="" className='w-full rounded-xl' />
 
+                                    </div>
+                                    <div className="flex lg:text-[12px] justify-between w-auto mt-2 font-semibold">
+                                        <p>{data.name}</p>
+                                        <p>{data.amount}</p>
+                                    </div>
+                                    <div className='flex text-[8px] lg:text-[7px] xl:text-[8px] 2xl:text-xs 3xl:text-sm 4xl:text-base gap-3 mt-2'>
+                                        <div>
+                                            <p className='text-gray-400'>Date</p>
+                                            <p>{data.date}</p>
                                         </div>
-                                        <div className="flex lg:text-[12px] justify-between w-auto mt-2 font-semibold">
-                                            <p>{data.name}</p>
-                                            <p>{data.amount}</p>
+                                        <div>
+                                            <p className='text-gray-400'>Time</p>
+                                            <p>{data.time}</p>
                                         </div>
-                                        <div className='flex text-[8px] lg:text-[7px] xl:text-[8px] gap-3 mt-2'>
-                                            <div>
-                                                <p className='text-gray-400'>Date</p>
-                                                <p>{data.date}</p>
-                                            </div>
-                                            <div>
-                                                <p className='text-gray-400'>Time</p>
-                                                <p>{data.time}</p>
-                                            </div>
-                                            <div>
-                                                <p className='text-gray-400'>Location</p>
-                                                <p>{data.location}</p>
-                                            </div>
+                                        <div>
+                                            <p className='text-gray-400'>Location</p>
+                                            <p>{data.location}</p>
                                         </div>
                                     </div>
-                                ))
-                            }
+                                </div>
+                            ))
+                        }
 
-                        </div>
-                        :
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 p-3'>
-                            {
-                                eventData.map((data) => (
-                                    <div
-                                        key={data.id}
-                                        onClick={() => handleEventClick(data)}
-                                        className={`bg-white rounded-xl shadow-xl p-2 w-full cursor-pointer`}>
-                                        <div>
-                                            <img src={data.image} alt="" className='w-full rounded-xl' />
-
-                                        </div>
-                                        <div className="flex lg:text-[12px] justify-between w-auto mt-2 font-semibold">
-                                            <p>{data.name}</p>
-                                            <p>{data.amount}</p>
-                                        </div>
-                                        <div className='flex text-[8px] lg:text-[7px] xl:text-[8px] gap-3 mt-2'>
-                                            <div>
-                                                <p className='text-gray-400'>Date</p>
-                                                <p>{data.date}</p>
-                                            </div>
-                                            <div>
-                                                <p className='text-gray-400'>Time</p>
-                                                <p>{data.time}</p>
-                                            </div>
-                                            <div>
-                                                <p className='text-gray-400'>Location</p>
-                                                <p>{data.location}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))
-                            }
-
-                        </div>
-                    }
+                    </div>
                 </div>
                 <div className='lg:w-[40%] xl:w-[30%] lg:block hidden relative border-l'>
                     <div className='fixed p-2 border-b h-[50px] w-[40%] z-10 bg-[#FBF7F4]'>
@@ -190,7 +128,7 @@ function UpcomingEvent_comp() {
                         >
                             {selectedEvent && (
                                 <>
-                                    <div className="bg-white rounded-xl p-3 shadow-lg">
+                                    <div className="bg-white rounded-xl p-2 shadow-lg">
                                         <div className="w-full text-center text-xs font-semibold mb-0.5">
                                             <p>Event details</p>
                                         </div>
@@ -277,4 +215,4 @@ function UpcomingEvent_comp() {
     )
 }
 
-export default UpcomingEvent_comp
+export default GuideEvent_comp

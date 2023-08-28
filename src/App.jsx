@@ -10,6 +10,9 @@ import Calender_page from './pages/calendar/Calender_page'
 import Payout_page from './pages/payout/Payout_page'
 import Guides_page from './pages/guides/Guides_page'
 import Climbers_page from './pages/climbers/Climbers_page'
+import GuideEvent_page from './pages/guides/GuideEvent_page'
+import ClimbersEvent_page from './pages/climbers/ClimbersEvent_page'
+import Stats_page from './pages/stats/Stats_page'
 
 function App() {
 
@@ -31,6 +34,9 @@ function App() {
           <Route path='/payout' element={<Payout_page />} />
           <Route path='/guides' element={<Guides_page />} />
           <Route path='/climbers' element={<Climbers_page />} />
+          <Route path='/guide-event' element={<GuideEvent_page />} />
+          <Route path='/climber-event' element={<ClimbersEvent_page />} />
+          <Route path='/stats' element={<Stats_page />} />
 
         </Routes>
       </BrowserRouter>

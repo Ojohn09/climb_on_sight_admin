@@ -5,6 +5,8 @@ import { IoIosSend } from "react-icons/io";
 import { useState } from "react";
 import { MdDoneOutline, MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
 import { setActiveTab } from "../../../redux/slices/features/activeTabSlice";
+import { useEffect } from "react";
+import { setShowAllGuides } from "../../../redux/slices/features/displaySlice";
 
 function AllGuides_comp() {
 
@@ -30,6 +32,21 @@ function AllGuides_comp() {
         { id: 18, image: 'https://source.unsplash.com/random/300x200?sig=10', name: 'Luke Skywalker' },
     ]
 
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            // Refresh the page when the user leaves
+            window.location.reload();
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        return () => {
+            // Remove the event listener when the component unmounts
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, []);
+
     const dispatch = useDispatch();
     const selectedEvent = useSelector((state) => state.event.selectedEvent);
     const [slideAnimation, setSlideAnimation] = useState("slide-in");
@@ -52,9 +69,9 @@ function AllGuides_comp() {
 
     return (
         <div>
-            <div className='w-full flex  overflow-y-hidden'>
-                <div className='lg:w-[60%] xl:w-[70%] h-[86vh] scrollbar-hide overflow-y-auto'>
-                    <div className='h-[50px] p-2 fixed flex items-center justify-between lg:w-[53%] xl:w-[64%] z-10 bg-[#FBF7F4] border-b border-r'>
+            <div className='w-full flex overflow-y-hidden'>
+                <div className='lg:w-[60%] xl:w-[70%] h-[86vh] 2xl:h-[86vh] scrollbar-hide overflow-y-auto'>
+                    <div className='h-[50px] p-2 fixed flex items-center justify-between lg:w-[53%] xl:w-[64%] 3xl:w-[67%] z-10 bg-[#FBF7F4] border-b'>
                         <p className='font-semibold'>All Guides</p>
                         <div className="relative flex items-center px-1 w-[30%] h-8 rounded-2xl shadow-sm bg-white overflow-hidden">
                             <div className="grid place-items-center h-full w-8 text-gray-300">
@@ -71,21 +88,21 @@ function AllGuides_comp() {
                                 placeholder="Search events" />
                         </div>
                     </div>
-                    <div className='grid grid-cols-1 md:grid-cols-4 gap-6 mt-12 p-3'>
+                    <div className='grid grid-cols-1 md:grid-cols-4 gap-6 mt-12 p-3 w-full'>
                         {climbers.map((data) => (
                             <div
                                 onClick={() => handleGuideClick(data)}
                                 key={data.id}
-                                style={{ backgroundImage: `url(${data.image})` }} className="w-[100%] xl:h-36 relative h-28 rounded-xl bg-cover bg-center">
+                                style={{ backgroundImage: `url(${data.image})` }} className="w-full xl:h-36 3xl:h-44 4xl:h-64 relative h-28 rounded-xl bg-cover bg-center">
                                 <div className="flex justify-between items-center absolute bottom-0 bg-gray-300 bg-opacity-60 backdrop-blur w-full rounded-xl p-2">
                                     <div>
-                                        <p className="text-[9px]">{data.name}</p>
-                                        <p className="text-[7px]">
+                                        <p className="text-[9px] 2xl:text-xs 3xl:text-sm 4xl:text-base">{data.name}</p>
+                                        <p className="text-[7px] 2xl:text-[10px] 3xl:text-xs 4xl:text-sm">
                                             <Link>View guide profile </Link>
                                         </p>
                                     </div>
                                     <div className="text-white bg-black rounded-full p-1">
-                                        <p className="text-[10px] xl:text-[12px]">
+                                        <p className="text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-base">
                                             <IoIosSend />
                                         </p>
                                     </div>
@@ -109,22 +126,22 @@ function AllGuides_comp() {
                                             <p>Event details</p>
                                         </div>
                                         <div>
-                                            <img src={selectedEvent.image} alt="" className={`w-full h-20 xl:h-28 object-cover rounded-xl transition duration-700`} />
+                                            <img src={selectedEvent.image} alt="" className={`w-full h-20 xl:h-28 2xl:h-32 3xl:h-36 4xl:h-40 object-cover rounded-xl transition duration-700`} />
                                         </div>
                                         <div className="flex justify-between mt-2">
-                                            <p className="font-semibold text-[12px]">{selectedEvent.name}</p>
-                                            <div className=" rounded-xl bg-gray-200 text-[10px] xl:text-xs flex items-center px-1">
+                                            <p className="font-semibold text-[12px] xl:text-sm 3xl:text-base 4xl:text-lg">{selectedEvent.name}</p>
+                                            <div className=" rounded-xl bg-gray-200 text-[10px] xl:text-xs 3xl:text-sm 4xl:text-base flex items-center px-1">
                                                 <p className="capitalize">234 completed events</p>
                                             </div>
                                         </div>
-                                        <div className="text-[10px] xl:text-[12px] mt-1">
-                                            <p className="text-[8px]">status</p>
+                                        <div className="text-[10px] xl:text-[12px] 2xl:text-xs 3xl:texr-sm 4xl:text-base mt-1">
+                                            <p className="text-[8px] 2xl:text-[10px] 3xl:text-xs 4xl:text-sm">status</p>
                                             <p className="flex items-center">
                                                 <span>Verified</span>
                                                 <span className="text-green-400 bg-gray-200 rounded-full"><MdDoneOutline /></span>
                                             </p>
                                         </div>
-                                        <div className="text-[10px] xl:text-[12px] flex justify-between mt-1">
+                                        <div className="text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-base 4xl:text-lg flex justify-between mt-1">
                                             <div>
                                                 <p>Customer Ratings</p>
                                                 <div className="w-16 h-auto">
@@ -138,11 +155,11 @@ function AllGuides_comp() {
                                                 </div>
                                             </div>
                                             <div className="">
-                                                <p className="bg-black text-white rounded-xl text-center p-0.5 px-2">See All Events</p>
+                                                <Link to='/guide-event' className="cursor-pointer bg-black text-white rounded-xl text-center p-0.5 px-2">See All Events</Link>
                                             </div>
                                         </div>
 
-                                        <div className="text-[8px] w-[80%] text-justify mt-1">
+                                        <div className="text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-base w-[80%] text-justify mt-1">
                                             <p className="text-gray-400 text-[10px]">Guide Bio</p>
                                             <p>Lorem ipsum dolor sit amet consectetur. Molestie erat vel suscipit lacinia vulputate.
                                                 Viverra pulvinar sed nibh facilisi nisl mattis neque aliquam volutpat.
@@ -151,15 +168,15 @@ function AllGuides_comp() {
                                             </p>
                                         </div>
 
-                                        <div className="text-[8px]  w-[80%] text-justify mt-1">
-                                            <p className="text-gray-400 text-[10px] xl:text-[12px]">Experience</p>
+                                        <div className="text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-base  w-[80%] text-justify mt-1">
+                                            <p className="text-gray-400 text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-base 4xl:text-lg">Experience</p>
                                             <p> 6 Years experience in ice climbing</p>
                                             <p>2 Years experience in mountain climbing</p>
                                         </div>
 
                                         <div>
                                             <div className="mt-3 flex justify-center">
-                                                <ul className="flex text-[9px] bg-gray-200 p-0.5 xl:p-1 w-fit gap-0.5 rounded-xl font-semibold">
+                                                <ul className="flex text-[9px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-base bg-gray-200 p-0.5 xl:p-1 w-fit gap-0.5 rounded-xl font-semibold">
                                                     <li
                                                         onClick={() => handleTabClick('tab1')}
                                                         className={`p-1 cursor-pointer ${activeTab === 'tab1' ? 'bg-white rounded-xl text-[#B58563]' : ''
@@ -181,12 +198,12 @@ function AllGuides_comp() {
                                                 {activeTab === 'tab1' ?
                                                     <div className="relative">
                                                         <div className="grid grid-cols-3 gap-2 h-[17vh] scrollbar-hide">
-                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28" />
-                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28" />
-                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28" />
-                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28" />
-                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28" />
-                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28" />
+                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28 2xl:h-32 3xl:h-36 4xl:h-40" />
+                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28 2xl:h-32 3xl:h-36 4xl:h-40" />
+                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28 2xl:h-32 3xl:h-36 4xl:h-40" />
+                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28 2xl:h-32 3xl:h-36 4xl:h-40" />
+                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28 2xl:h-32 3xl:h-36 4xl:h-40" />
+                                                            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="rounded-xl w-full h-[70px] xl:h-28 2xl:h-32 3xl:h-36 4xl:h-40" />
 
                                                         </div>
                                                         <div className="absolute bottom-1  flex left-[35%]">
@@ -199,7 +216,7 @@ function AllGuides_comp() {
                                                         <div className="bg-gray-200 p-1 rounded-xl">
                                                             <div className=" flex gap-1 items-center">
                                                                 <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" className="w-7 h-7 xl:w-8 xl:h-8 rounded-full" />
-                                                                <div className="text-[10px] ">
+                                                                <div className="text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-lg">
                                                                     <p className="font-semibold">Tricia Matei</p>
                                                                     <p className="text-gray-400">
                                                                         Climber
@@ -207,13 +224,13 @@ function AllGuides_comp() {
                                                                 </div>
 
                                                             </div>
-                                                            <p className="text-[8px]">
+                                                            <p className="text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-base">
                                                                 Lorem ipsum dolor sit amet consectetur. Nunc ullamcorper neque quam laoreet tellus vulputate.
                                                                 Purus vulputate tristique convallis magna velit velit dui ultrices consectetur.
                                                                 Sit enim etiam aenean lobortis non interdum.
 
                                                             </p>
-                                                            <div className="w-12 h-auto">
+                                                            <div className="w-12 h-auto xl:w-14 2xl:w-16 3xl:w-20 4xl:w-28">
                                                                 <svg className="" viewBox="0 0 105 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path d="M7.54894 2.92705C7.8483 2.00574 9.1517 2.00574 9.45106 2.92705L10.1839 5.18237C10.3177 5.5944 10.7017 5.87336 11.1349 5.87336L13.5063 5.87336C14.475 5.87336 14.8778 7.11297 14.0941 7.68237L12.1756 9.07624C11.8251 9.33088 11.6784 9.78225 11.8123 10.1943L12.5451 12.4496C12.8445 13.3709 11.79 14.137 11.0063 13.5676L9.08778 12.1738C8.7373 11.9191 8.2627 11.9191 7.91221 12.1738L5.99372 13.5676C5.21001 14.137 4.15553 13.3709 4.45488 12.4496L5.18768 10.1943C5.32155 9.78225 5.1749 9.33088 4.82441 9.07624L2.90592 7.68237C2.1222 7.11297 2.52498 5.87336 3.4937 5.87336L5.86509 5.87336C6.29832 5.87336 6.68227 5.5944 6.81614 5.18237L7.54894 2.92705Z" fill="#F2C37B" />
                                                                     <path d="M29.5489 2.92705C29.8483 2.00574 31.1517 2.00574 31.4511 2.92705L32.1839 5.18237C32.3177 5.5944 32.7017 5.87336 33.1349 5.87336L35.5063 5.87336C36.475 5.87336 36.8778 7.11297 36.0941 7.68237L34.1756 9.07624C33.8251 9.33088 33.6784 9.78225 33.8123 10.1943L34.5451 12.4496C34.8445 13.3709 33.79 14.137 33.0063 13.5676L31.0878 12.1738C30.7373 11.9191 30.2627 11.9191 29.9122 12.1738L27.9937 13.5676C27.21 14.137 26.1555 13.3709 26.4549 12.4496L27.1877 10.1943C27.3216 9.78225 27.1749 9.33088 26.8244 9.07624L24.9059 7.68237C24.1222 7.11297 24.525 5.87336 25.4937 5.87336L27.8651 5.87336C28.2983 5.87336 28.6823 5.5944 28.8161 5.18237L29.5489 2.92705Z" fill="#F2C37B" />
@@ -225,7 +242,7 @@ function AllGuides_comp() {
 
                                                         </div>
 
-                                                        <div className="mx-auto w-[70%] flex justify-evenly mt-1.5 xl:mt-3">
+                                                        <div className="mx-auto w-[70%] flex justify-evenly mt-1.5 xl:mt-3 xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl">
                                                             <button>
                                                                 <MdKeyboardArrowLeft />
                                                             </button>
