@@ -69,7 +69,7 @@ function SideNav_HOC() {
                             </svg>
                             <p className="menu-text text-black font-semibold">Events</p> </div>
                     </Link>
-                    <Link to='/payout'>
+                    <Link to='/admin'>
                         <div className="menu-icon flex items-center gap-2">
                             <p className="text-lg 2xl:text-2xl 3xl:text-3xl">
                                 <AiFillPlusCircle />
