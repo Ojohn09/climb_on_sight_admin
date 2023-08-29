@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { PlusIcon } from "../../../utils/icons"
 
 
@@ -60,9 +61,10 @@ function NewMessages_comp() {
                     Add admin
                 </p>
                 <div className="flex flex-col bg-white rounded-xl p-4 4xl:p-10 3xl:p-8 text-xs 2xl:text-base 3xl:text-lg 4xl:text-3xl  items-center justify-center">
-                    <p className="w-6 h-6 xl:w-10 xl:h-10 2xl:w-14 2xl:h-14 mb-2">
+                    <Link to='/admin' className="w-6 h-6 xl:w-10 xl:h-10 2xl:w-14 2xl:h-14 mb-2">
                         <PlusIcon />
-                    </p>
+                    </Link>
+
                     <p>Add new admin</p>
                 </div>
             </div>
