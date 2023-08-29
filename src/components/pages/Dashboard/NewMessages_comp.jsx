@@ -13,7 +13,7 @@ function NewMessages_comp() {
 
                             <img src="https://picsum.photos/200/300" alt="" className="w-5 h-5 xl:w-8 xl:h-8 2xl:w-8 3xl:w-13 2xl:h-8 3xl:h-13 rounded-full" />
                             <div className="w-[70%]">
-                                <p>Andray Finn</p>
+                                <p>Andrey Finn</p>
                                 <p className="text-gray-500 text-[7px] xl:text-[10px] 2xl:text-xs 3xl:text-xs 4xl:text-sm">Hello, Good day i would love to make an enquiry .... </p>
                             </div>
                             <p className="p-1 px-2 2xl:px-3 2xl:p-1.5 text-white bg-black rounded-full flex">
