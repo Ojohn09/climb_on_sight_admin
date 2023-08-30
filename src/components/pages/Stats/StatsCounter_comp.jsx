@@ -4,7 +4,7 @@ import { ArrowUpRightIcon } from "../../../utils/icons"
 function StatsCounter_comp() {
     return (
         <div>
-            <div className="w-full h-auto">
+            <div className="w-[70%] h-auto">
                 <div className="flex flex-col md:flex-row gap-8 lg:gap-4 2xl:gap-8 items-center w-full ">
 
                     <div className="flex justify-center bg-green-50 rounded-xl p-3 2xl:p-5 text-center text-[10px] lg:text-[6px] xl:text-[10px] 3xl:text-xs 4xl:text-sm 3xl:py-8 4xl:py-12 w-full md:w-[25%] shadow-sm">

@@ -71,7 +71,7 @@ function AllClimbers_comp() {
                             <div
                                 onClick={() => handleGuideClick(data)}
                                 key={data.id}
-                                style={{ backgroundImage: `url(${data.image})` }} className="w-[100%] xl:h-36 relative h-28 rounded-xl bg-cover bg-center cursor-pointer">
+                                style={{ backgroundImage: `url(${data.image})` }} className="w-[100%] xl:h-36 relative h-28 3xl:h-44 4xl:h-64 rounded-xl bg-cover bg-center cursor-pointer">
                                 <div className="flex justify-between items-center absolute bottom-0 bg-gray-300 bg-opacity-60 backdrop-blur w-full rounded-xl p-2">
                                     <div>
                                         <p className="text-[9px]">{data.name}</p>
@@ -119,7 +119,7 @@ function AllClimbers_comp() {
                                                 <p >Mountain climbing</p>
                                             </div>
                                             <div className="">
-                                                <Link to='/climb-event' className="bg-black text-white rounded-xl text-center p-0.5 px-2">See All Events</Link>
+                                                <Link to='/climbers-event' className="bg-black text-white rounded-xl text-center p-0.5 px-2">See All Events</Link>
                                             </div>
                                         </div>
 

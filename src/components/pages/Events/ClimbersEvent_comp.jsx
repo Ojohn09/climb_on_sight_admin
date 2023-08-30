@@ -82,13 +82,13 @@ function ClimbersEvent_comp() {
                                 placeholder="Search events" />
                         </div>
                     </div>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 p-3'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 3xl:grid-cols-4  gap-6 mt-12 p-3'>
                         {
                             eventData.map((data) => (
                                 <div
                                     key={data.id}
                                     onClick={() => handleEventClick(data)}
-                                    className={`bg-white rounded-xl shadow-xl p-2 w-fit cursor-pointer`}>
+                                    className={`bg-white rounded-xl shadow-xl p-2 w-full  cursor-pointer`}>
                                     <div>
                                         <img src={data.image} alt="" className='w-full rounded-xl' />
 
