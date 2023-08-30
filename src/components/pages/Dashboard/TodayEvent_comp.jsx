@@ -19,15 +19,11 @@ function TodayEvent_comp() {
                     <p className='font-semibold'>Todays events</p>
                     <p>{formattedDate}</p>
                 </div>
-
-                <div className='text-lg 3xl:text-2xl p-1 bg-black text-white rounded-full cursor-pointer'>
-                    <Link to='/calendar'><BiPlus /> </Link>
-                </div>
             </div>
 
             <div className='w-[60%] xl:w-[50%] 2xl:w-[70%] lg:text-[11px] xl:mt-0 xl:text-sm 3xl:text-3xl 3xl:mt-4 font-bold'>
                 <p>
-                    All booked trips coming up this week
+                    Top locations
                 </p>
             </div>
 
@@ -41,10 +37,10 @@ function TodayEvent_comp() {
                     <img className=" sm:w-8 sm:h-8 w-6 h-6 2xl:w-10 2xl:h-10 3xl:w-14 3xl:h-14 left-[40px] sm:left-[80px] 3xl:text-[160px] top-0 absolute rounded-full border border-white" src="https://picsum.photos/200/300" />
                 </div>
 
-                <div className='text-[8px] sm:text-[10px] xl:text-xs 3xl:text-lg border-l pl-2'>
-                    <p className='font-bold'>All climbers registered</p>
+                <div className='text-[8px] sm:text-[10px] xl:text-xs 3xl:text-lg 4xl:text-xl border-l pl-2'>
+                    <p className='font-bold'>Total events booked</p>
                     <p className='text-gray-700
-                        '>432</p>
+                        '>6432</p>
                 </div>
             </div>
 
