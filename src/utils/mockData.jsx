@@ -40,3 +40,11 @@ export const payoutTableData = [
     { id: 5, name: 'morris anderson', amount: '$234', trip: 'bayou rock climbing', date: 'April 5' },
     { id: 6, name: 'morris anderson', amount: '$234', trip: 'bayou rock climbing', date: 'April 5' },
 ]
+
+export const notificationArray = [
+    { id: 0, notiText: "Ivan Jhay accepted your guide request" },
+    { id: 1, notiText: "Ivan Jhay accepted your guide request" },
+    { id: 2, notiText: "Ivan Jhay accepted your guide request" },
+    { id: 3, notiText: "Ivan Jhay accepted your guide request" },
+    { id: 4, notiText: "Ivan Jhay accepted your guide request" },
+];

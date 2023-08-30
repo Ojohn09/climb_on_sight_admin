@@ -1,17 +1,8 @@
 import { IoNotifications } from "react-icons/io5"
+import { notificationArray } from "../../utils/mockData"
 
 
 function Notification_comp() {
-
-    const notificationArray = [
-        { id: 0, notiText: "Ivan Jhay accepted your guide request" },
-        { id: 1, notiText: "Ivan Jhay accepted your guide request" },
-        { id: 2, notiText: "Ivan Jhay accepted your guide request" },
-        { id: 3, notiText: "Ivan Jhay accepted your guide request" },
-        { id: 4, notiText: "Ivan Jhay accepted your guide request" },
-
-
-    ]
 
     return (
         <div className="bg-white rounded-xl p-3 xl:px-6 h-full overflow-y-auto shadow-sm">
