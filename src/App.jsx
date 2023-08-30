@@ -32,7 +32,7 @@ function App() {
           <Route path='/guide-event' element={<GuideEvent_page />} />
           <Route path='/climbers-event' element={<ClimbersEvent_page />} />
           <Route path='/stats' element={<Stats_page />} />
-          <Route path='admin' element={<AddAdmin_page />} />
+          <Route path='/admin' element={<AddAdmin_page />} />
 
         </Routes>
       </BrowserRouter>
