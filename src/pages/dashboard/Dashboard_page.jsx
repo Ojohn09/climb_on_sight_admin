@@ -9,7 +9,7 @@ function Dashboard_page() {
     return (
         <AppLayout_HOC>
             <div className="h-full w-full items-start gap-6 lg:flex">
-                <div className="h-full lg:w-[70%]">
+                <div className="h-full lg:w-[70%] overflow-hidden">
                     <Cards_components />
                     <DateAndNotification_comp />
                     <NewMessages_comp />
