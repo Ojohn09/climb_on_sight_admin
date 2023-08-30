@@ -10,7 +10,7 @@ function StatsChart() {
         },
         {
             name: 'Sarah adams',
-            uv: 30,
+            uv: 35,
             amt: 2210,
         },
         {
@@ -20,7 +20,7 @@ function StatsChart() {
         },
         {
             name: 'Mary adams',
-            uv: 20,
+            uv: 25,
             amt: 2000,
         },
         {
@@ -29,38 +29,45 @@ function StatsChart() {
             amt: 2181,
         },
         {
-            name: 'Stephanie grey',
-            uv: 5,
-            amt: 2500,
-        },
-        {
             name: 'Sane more',
             uv: 30,
-            amt: 2100,
+            amt: 20,
         },
     ];
 
+
+
+
+
     return (
-        <div className='bg-white w-full h-full p-5'>
-            <div style={{ width: '100%', height: '500px' }}>
-                <ResponsiveContainer width="100%" height="100%">
+        <div className='bg-white w-full h-full p-5 3xl:p-10 3xl:rounded-[40px]'>
+            <div className=" w-full flex">
+                <p className='3xl:text-5xl font-bold'>Stats</p>
+
+                <div>
+
+                </div>
+            </div>
+            <div className='w-full h-[300px] flex items-start 3xl:h-[600px] text-[8px] 3xl:text-2xl mt-10'>
+                <ResponsiveContainer width="80%" height="80%">
                     <BarChart
-                        width={50}
-                        height={30}
+                        width={500}
+                        height={300}
                         data={data}
                         margin={{
                             top: 5,
                             right: 30,
                             left: 20,
-                            bottom: 5,
+                            bottom: 30,
                         }}
+                        maxBarSize={30}
+
                     >
                         {/* <CartesianGrid strokeDasharray="3 3" /> */}
-                        <XAxis dataKey="name" />
-                        <YAxis />
+                        <YAxis axisLine={false} />
+                        <XAxis axisLine={false} dataKey="name" tick={<CustomXAxisTick />} dy={10} />
                         <Tooltip />
-                        <Legend />
-                        <Bar dataKey="uv" fill="#B58563" />
+                        <Bar dataKey="uv" fill="#B58563" radius={50} stroke />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
@@ -69,3 +76,33 @@ function StatsChart() {
 }
 
 export default StatsChart
+
+
+
+
+
+
+
+export const CustomXAxisTick = ({ x, y, payload }) => {
+    const nameParts = payload.value.split(' '); // Split the name into parts
+    const dy = 28; // Offset for line breaks
+
+    return (
+        <g transform={`translate(${x},${y})`} >
+            {nameParts.map((part, index) => (
+                <text
+                    key={index}
+                    x={0}
+                    y={20}
+                    dy={index === 0 ? 0 : dy} // Offset for line breaks
+                    textAnchor="middle"
+                    fill="#000"
+                    className='mt-20'
+
+                >
+                    {part}
+                </text>
+            ))}
+        </g>
+    );
+};

@@ -10,7 +10,7 @@ function Stats_page() {
             <div>
                 <StatsCounter_comp />
 
-                <div className="flex">
+                <div className="flex mt-10">
                     <div className="w-1/2">
                         <StatsChart />
                     </div>
