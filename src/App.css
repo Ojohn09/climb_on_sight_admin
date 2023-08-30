@@ -24,6 +24,7 @@
   left: 80px;
   transition: left 2s;
   font-size: 12px;
+
 }
 
 .menu:hover .menu-icon .menu-text {
