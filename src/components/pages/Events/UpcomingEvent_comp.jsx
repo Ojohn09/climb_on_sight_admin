@@ -190,7 +190,7 @@ function UpcomingEvent_comp() {
                         >
                             {selectedEvent && (
                                 <>
-                                    <div className="bg-white rounded-xl p-3 shadow-lg">
+                                    <div className="bg-white h-full rounded-xl p-3 shadow-lg">
                                         <div className="w-full text-center text-xs font-semibold mb-0.5">
                                             <p>Event details</p>
                                         </div>
